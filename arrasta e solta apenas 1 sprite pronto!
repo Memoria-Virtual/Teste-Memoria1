@@ -1,0 +1,91 @@
+<!doctype html> 
+<html lang="pt"> 
+<head> 
+	<meta charset="UTF-8" />
+    
+	<title>Teste do Phaser</title>
+    <!--Aqui a gente informa que vamos utilizar javascript e que a nossa biblioteca está no endereço citado como src -->
+	<script type="text/javascript" src="js/phaser.min.js"></script>
+    
+    <!--\\estilo utilizado apenas para crir uma margem por estetica e nada mais-->
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<script type="text/javascript">
+
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
+
+function preload() {
+    
+    game.load.image('imgarrasta', 'assets/imgarrasta.png');
+     game.load.image('imgarrasta1', 'assets/imgarrasta.png');
+    game.load.image('quadro', 'assets/quadro2.png');
+     game.load.image('donaanima', 'assets/donaanima.png');
+    game.load.image('fundo', 'assets/fundogrande.png');
+}
+//comecei a tentar colocar a variavel que trava o sprite mas to cansado dms.
+   // var result = 'Drag a sprite';
+
+    
+function create() {
+   
+       /* var rectangle = new Phaser.Rectangle(100, 200, 600, 200);
+    var bmd = game.add.bitmapData(game.width, game.height);
+    bmd.rect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, '#2d2d2d');
+ var p = new Phaser.Point();
+
+    rectangle.getPoint(Phaser.TOP_LEFT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.TOP_CENTER, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.TOP_RIGHT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.MIDDLE_LEFT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.MIDDLE_CENTER, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.MIDDLE_RIGHT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.BOTTOM_LEFT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.BOTTOM_CENTER, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    rectangle.getPoint(Phaser.BOTTOM_RIGHT, p);
+    bmd.rect(p.x, p.y, 2, 2, '#ff00ff');
+
+    bmd.addToWorld();
+    
+    */
+    game.add.sprite(0, 0, 'fundo');
+    game.add.sprite(280, 180, 'quadro');
+   var imgarrasta = game.add.sprite(500, 400, 'imgarrasta');
+    game.add.sprite(0, 0, 'donaanima');
+    game.add.sprite(100, 400, 'imgarrasta1');
+    var imgarrasta = game.add.sprite(100, 400, 'imgarrasta1');
+    // Input Habilita os sprites
+    imgarrasta.inputEnabled = true;
+     // Permitir arrastar - o parâmetro 'true' fará com que o sprite se encaixe no centro
+    imgarrasta.input.enableDrag(true);
+
+}
+    
+function update() {
+}
+
+</script>
+
+</body>
+</html>
